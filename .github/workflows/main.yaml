@@ -16,7 +16,7 @@ jobs:
       - name: gitting
         with:
           variables: |
-            number=0
+            number='0'
         uses: actions/checkout@v3
             
       - name: gitting   
