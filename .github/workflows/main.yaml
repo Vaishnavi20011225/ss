@@ -34,6 +34,7 @@ jobs:
                toreplace=$(cat gitops.txt | sed 's/[^0-9]*//g'); echo $toreplace
                newnumber= echo "$toreplace + 50" | bc 
                newnumber=echo $newnumber >> $GITHUB_ENV
+               echo "NEWNUMBER" $newnumber
                sed -i -e 's/${{env.toreplace}}/${{env.newnumber}}/g' gitops.txt
                cat gitops.txt
                echo "{{env.toreplace}}+50" >> $GITHUB_ENV
