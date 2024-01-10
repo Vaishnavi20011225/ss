@@ -12,11 +12,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-        
-      - name: gitting
-        run: | 
-                number='0'
-                number2=50
                 
       - name: echoing
         run: |  
@@ -37,7 +32,7 @@ jobs:
               
                
                cat gitops.txt
-               sed -i -e 's/$number/50/g' gitops.txt
+               sed -i -e 's/${{env.number}}/100/g' gitops.txt
                cat gitops.txt
                NUMBER=$(echo gitops.txt | sed 's/[^0-9]*//g') ; echo $NUMBER
                
