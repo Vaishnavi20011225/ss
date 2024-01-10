@@ -14,6 +14,11 @@ jobs:
         uses: actions/checkout@v3
         
       - name: gitting
+        with:
+          variables: |
+            number=0
+            
+      - name: gitting   
         run: |
                git clone https://github.com/Vaishnavi20011225/ss-gitops.git
                git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
@@ -21,9 +26,13 @@ jobs:
 
                cd ss-gitops
                ls
+               "echo $number"
+               echo "$number"
                cat gitops.txt
-               sed -i -e 's/hello/olleh/g' gitops.txt
+               sed -i -e 's/$number/50/g' gitops.txt
                cat gitops.txt
+               
+              
     
                
 
