@@ -9,7 +9,7 @@ jobs:
     name: push to ss-gitops
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: checkoutt
         uses: actions/checkout@v3
         
       - name: echoing
