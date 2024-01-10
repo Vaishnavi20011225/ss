@@ -19,7 +19,7 @@ jobs:
                 number2=0
       - name: echoing
         run: |  
-                echo $number1
+                echo $number2
                 
             
       # - name: gitting   
