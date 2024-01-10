@@ -31,13 +31,14 @@ jobs:
               
                
                cat gitops.txt
-               sed -i 's/${{env.SS_PRE}}/121/g' gitops.txt
+               echo "$toreplace + 50" | bc; echo "newnumber=$newnumber"
+               sed -i -e 's/${{env.number}}/150/g' gitops.txt
                cat gitops.txt
-               toreplace=$(cat gitops.txt | sed 's/[^0-9]*//g'); echo "toreplace=$toreplace" >> $GITHUB_ENV
-               echo ${{env.toreplace}}
-               newnumber= echo "$toreplace + 50" | bc; echo "newnumber=$newnumber" >> $GITHUB_ENV
-               echo ${{env.newnumber}}
                
-               sed 's/${{env.SS_PRE}}/121/g' gitops.txt
-               cat gitops.txt
-               echo "{{env.toreplace}}+50" >> $GITHUB_ENV
+               # newnumber= echo "$toreplace + 50" | bc; echo "newnumber=$newnumber" >> $GITHUB_ENV
+               # echo ${{env.newnumber}}
+               
+               # sed 's/${{env.SS_PRE}}/121/g' gitops.txt
+               # cat gitops.txt
+               # toreplace=$(cat gitops.txt | sed 's/[^0-9]*//g'); echo "toreplace=$toreplace" >> $GITHUB_ENV
+               # echo ${{env.toreplace}}
