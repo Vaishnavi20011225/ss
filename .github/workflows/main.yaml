@@ -22,6 +22,12 @@ jobs:
                cd ss-gitops
                ls
                cat gitops.txt
+               str= gitops.txt
+               echo ls
+    
+               
+
+               
 
                 
               
