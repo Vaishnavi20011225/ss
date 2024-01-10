@@ -17,9 +17,11 @@ jobs:
         run: | 
                 number='0'
                 number2=50
+                
       - name: echoing
         run: |  
-                echo $number2
+                number=50
+                echo "number=$number" >> $GITHUB_ENV
                 
                 
             
@@ -31,8 +33,8 @@ jobs:
 
                cd ss-gitops
                ls
-               echo $number
-               echo $number2
+               echo ${{ env.number }}
+              
                
                cat gitops.txt
                sed -i -e 's/$number/50/g' gitops.txt
