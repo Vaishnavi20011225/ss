@@ -27,7 +27,7 @@ jobs:
 
                cd ss-gitops
                ls
-               echo "$number"
+               echo $number
                cat gitops.txt
                sed -i -e 's/$number/50/g' gitops.txt
                cat gitops.txt
