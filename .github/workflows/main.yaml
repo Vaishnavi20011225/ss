@@ -25,30 +25,15 @@ jobs:
                git clone https://github.com/Vaishnavi20011225/ss-gitops.git
                git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
                git config --global user.name "Vaishnavi20011225"
-
                cd ss-gitops
                ls
                echo ${{ env.number }}
               
                
                cat gitops.txt
-               
-               toreplace=$(cat gitops.txt | sed 's/[^0-9]*//g'); echo "toreplace=$toreplace" >> $GITHUB_ENV
-               echo $${env.toreplace}}
-               echo "TOREPLACE=" ${{env.toreplace}}
-               newnumber= echo "$toreplace + 50" | bc; echo "newnumber=$newnumber" >> $GITHUB_ENV
-               echo ${{env.newnumber}}
-               
-               sed -i -e 's/$toreplace/${{env.newnumber}}/g' gitops.txt
+               toreplace=$(cat gitops.txt | sed 's/[^0-9]*//g'); echo $toreplace
+               newnumber= echo "$toreplace + 50" | bc 
+               echo $newnumber
+               sed -i -e 's/${{env.toreplace}}/$newnumber/g' gitops.txt
                cat gitops.txt
                echo "{{env.toreplace}}+50" >> $GITHUB_ENV
-               
-              
-    
-               
-
-               
-
-                
-              
-      
