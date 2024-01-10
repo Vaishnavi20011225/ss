@@ -22,8 +22,8 @@ jobs:
                cd ss-gitops
                ls
                cat gitops.txt
-               str= gitops.txt
-               echo ls
+               sed -i -e 's/hello/olleh/g' gitops.txt
+               cat gitops.txt
     
                
 
