@@ -17,6 +17,7 @@ jobs:
         with:
           variables: |
             number=0
+        uses: actions/checkout@v3
             
       - name: gitting   
         run: |
