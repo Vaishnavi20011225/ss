@@ -14,10 +14,9 @@ jobs:
         uses: actions/checkout@v3
         
       - name: gitting
-        with:
-          variables: |
-            number='0'
-        uses: actions/checkout@v3
+        run: | 
+                number='0'
+                number2=0
             
       - name: gitting   
         run: |
@@ -28,6 +27,8 @@ jobs:
                cd ss-gitops
                ls
                echo $number
+               echo $number2
+               
                cat gitops.txt
                sed -i -e 's/$number/50/g' gitops.txt
                cat gitops.txt
