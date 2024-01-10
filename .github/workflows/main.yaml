@@ -21,6 +21,7 @@ jobs:
 
                cd ss-gitops
                ls
+               cat gitops.txt
 
                 
               
