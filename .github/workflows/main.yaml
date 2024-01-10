@@ -32,9 +32,11 @@ jobs:
               
                
                cat gitops.txt
-               sed -i -e 's/${{env.number}}/150/g' gitops.txt
+               toreplace=$(cat gitops.txt | sed 's/[^0-9]*//g') ; echo $toreplace
+               sed -i -e 's/${{env.toreplace}}/{{env.toreplace}}+50/g' gitops.txt
                cat gitops.txt
-               echo "number=150" >> $GITHUB_ENV
+               echo "{{env.toreplace}}+50" >> $GITHUB_ENV
+               
               
     
                
