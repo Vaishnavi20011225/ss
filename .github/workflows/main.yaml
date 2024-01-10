@@ -17,21 +17,25 @@ jobs:
         run: | 
                 number='0'
                 number2=0
+      - name: echoing
+        run: |  
+                echo $number1
+                
             
-      - name: gitting   
-        run: |
-               git clone https://github.com/Vaishnavi20011225/ss-gitops.git
-               git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
-               git config --global user.name "Vaishnavi20011225"
+      # - name: gitting   
+      #   run: |
+      #          git clone https://github.com/Vaishnavi20011225/ss-gitops.git
+      #          git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
+      #          git config --global user.name "Vaishnavi20011225"
 
-               cd ss-gitops
-               ls
-               echo $number
-               echo $number2
+      #          cd ss-gitops
+      #          ls
+      #          echo $number
+      #          echo $number2
                
-               cat gitops.txt
-               sed -i -e 's/$number/50/g' gitops.txt
-               cat gitops.txt
+      #          cat gitops.txt
+      #          sed -i -e 's/$number/50/g' gitops.txt
+      #          cat gitops.txt
                
               
     
