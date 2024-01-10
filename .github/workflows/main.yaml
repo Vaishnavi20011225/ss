@@ -38,6 +38,6 @@ jobs:
                newnumber= echo "$toreplace + 50" | bc; echo "newnumber=$newnumber" >> $GITHUB_ENV
                echo ${{env.newnumber}}
                
-               sed -i -e 's/${{env.SS_PRE}}/121/g' gitops.txt
+               sed 's/${{env.SS_PRE}}/121/g' gitops.txt
                cat gitops.txt
                echo "{{env.toreplace}}+50" >> $GITHUB_ENV
